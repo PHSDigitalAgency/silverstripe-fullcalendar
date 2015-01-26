@@ -1,4 +1,4 @@
-# SilverStripe Full Calendar Module
+# SilverStripe Full Calendar Module Updated to use Latest FullCalendar.js (v2.2.6)
 
 This is a simple module that builds on the event calendar module to allow you to
 render the initial calendar view using the jquery fullcalendar plugin.

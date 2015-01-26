@@ -75,13 +75,12 @@ class FullCalendarControllerExtension extends Extension {
 			$result[] = array(
 				'id'        => $event->ID,
 				'title'     => $event->getTitle(),
-				'start'     => strtotime("$event->StartDate $event->StartTime"),
-				'end'       => strtotime("$event->EndDate $event->EndTime"),
+				'start'     => "$event->StartDate $event->StartTime",
+				'end'       => "$event->EndDate $event->EndTime",
 				'startTime' => $event->getFormattedStartTime(),
-          		'endTime'   => $event->getFormattedEndTime(),
+          			'endTime'   => $event->getFormattedEndTime(),
 				'allDay'    => (bool) $event->AllDay,
 				'url'       => $event->Link(),
-				//'className' => $event->Event()->Parent()->ElementName());
 			);
 		}
 

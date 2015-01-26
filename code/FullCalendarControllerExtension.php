@@ -25,7 +25,7 @@ class FullCalendarControllerExtension extends Extension {
 	 * @return full calendar view
 	 */
 	public function full() {
-		Requirements::css('fullcalendar/thirdparty/jquery-fullcalendar/fullcalendar.css');
+		Requirements::css('fullcalendar/thirdparty/jquery-fullcalendar/fullcalendar.min.css');
 
 		Requirements::combine_files('fullcalendar.packed.js', array(
 			'fullcalendar/thirdparty/jquery-fullcalendar/moment.min.js',

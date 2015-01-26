@@ -25,11 +25,13 @@ class FullCalendarControllerExtension extends Extension {
 	 * @return full calendar view
 	 */
 	public function full() {
-		Requirements::javascript(THIRDPARTY_DIR . '/jquery/jquery.js');
+		Requirements::css('fullcalendar/thirdparty/jquery-fullcalendar/fullcalendar.css');
+
+		// Requirements::javascript(THIRDPARTY_DIR . '/jquery/jquery.js');
 		Requirements::javascript('fullcalendar/thirdparty/jquery-fullcalendar/moment.min.js');
 		Requirements::javascript('fullcalendar/thirdparty/jquery-fullcalendar/fullcalendar.js');
 		Requirements::javascript('fullcalendar/javascript/FullCalendar.js');
-		Requirements::css('fullcalendar/thirdparty/jquery-fullcalendar/fullcalendar.css');
+		Requirements::add_i18n_javascript('fullcalendar/thirdparty/jquery-fullcalendar/lang');
 
 		$basicAgenda = 'agenda';
 
@@ -59,9 +61,9 @@ class FullCalendarControllerExtension extends Extension {
 		$end   = $request->getVar('end');
 
 		// for testing
-		if(!$end){
-			$end = '2013-12-12';
-		}
+		// if(!$end){
+		// 	$end = '2013-12-12';
+		// }
 
 		$events = $this->owner->data()->getEventList(
 	      	sfDate::getInstance($start)->date(),
@@ -79,7 +81,7 @@ class FullCalendarControllerExtension extends Extension {
 				'start'     => "$event->StartDate $event->StartTime",
 				'end'       => "$event->EndDate $event->EndTime",
 				'startTime' => $event->getFormattedStartTime(),
-          			'endTime'   => $event->getFormattedEndTime(),
+          		'endTime'   => $event->getFormattedEndTime(),
 				'allDay'    => (bool) $event->AllDay,
 				'url'       => $event->Link(),
 			);
